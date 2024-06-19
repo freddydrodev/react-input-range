@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export interface Range {
   max: number;
@@ -35,6 +35,7 @@ export interface InputRangeProps {
   step?: number;
   value: Range | number;
 }
-
-export default class InputRange extends React.Component<InputRangeProps, any> {
-}
+export type Point = {
+  x: number;
+  y: number;
+};

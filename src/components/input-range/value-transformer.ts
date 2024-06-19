@@ -1,4 +1,5 @@
-import { clamp } from '../utils';
+import { Point } from "../types";
+import { clamp } from "../utils";
 
 /**
  * Convert a point into a percentage value
@@ -7,12 +8,15 @@ import { clamp } from '../utils';
  * @param {ClientRect} clientRect
  * @return {number} Percentage value
  */
-export function getPercentageFromPosition(position, clientRect) {
+export const getPercentageFromPosition = (
+  position: Point,
+  clientRect: ClientRect
+) => {
   const length = clientRect.width;
   const sizePerc = position.x / length;
 
   return sizePerc || 0;
-}
+};
 
 /**
  * Convert a point into a model value
@@ -27,7 +31,7 @@ export function getValueFromPosition(position, minValue, maxValue, clientRect) {
   const sizePerc = getPercentageFromPosition(position, clientRect);
   const valueDiff = maxValue - minValue;
 
-  return minValue + (valueDiff * sizePerc);
+  return minValue + valueDiff * sizePerc;
 }
 
 /**

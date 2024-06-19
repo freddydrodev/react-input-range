@@ -4,6 +4,6 @@
  * @param {*} value
  * @return {boolean}
  */
-export default function isDefined(value) {
+export const isDefined = (value: any): boolean => {
   return value !== undefined && value !== null;
-}
+};
